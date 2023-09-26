@@ -17,7 +17,7 @@ Please find the required manuscript documents over here (manuscript/Aggarwal_Col
 
 
 ## Packages Required
-The packages required for running this code are Matlab, PyTorch, Numpy, Openslide, PIL, OpenCV, and Matplotlib.<br>
+The packages required for running this code are Matlab, PyTorch, Numpy, Openslide, PIL, OpenCV, Pandas, Sksurv, Sklearn, and Matplotlib.<br>
 
 
 ## Pipeline for CollaTIL biomarker
@@ -26,20 +26,31 @@ The main steps involved in the CollaTIL biomarker are as follows:
 2. Extracting collagen features
 3. Extracting immune features
 4. Survival analysis
+5. Genomic analysis
 
 
 ## Running the code
 1. <b>Preprocessing steps</b><br>
-a. Extracting patches - This extracts patches from the whole slide image of size 3000x3000-pixel. Run the python file 'python3 code/preprocessing/extract_patches.py' (specify the 'input_path' to the location where whole slide images exist and 'output_path' where you want to store the patches)<br><br>
+a. <b>Extracting tiles</b> - This extracts tiles from the whole slide image of size 3000x3000-pixel. Run the python file 'python3 code/preprocessing/extract_patches.py' (specify the 'input_path' to the location where whole slide images exist and 'output_path' where you want to store the tiles)<br><br>
 
-    b. <b>Epithelium/Stroma segmentation</b> - To segment the epithelium/stromal regions on the patches extracted above, run the pretrained epithelium/stroma model 'python3 code/preprocessing/epithelium_stroma_segmentation.py'. The model weights file is located at 'code/preprocessing/epi_seg_unet.pth' (specify the 'input_path' to the location where patches are extracted and 'output_path' where you want to store the epi/stroma segmentation masks)<br><br>
+    b. <b>Epithelium/Stroma segmentation</b> - To segment the epithelium/stromal regions on the tiles extracted above, run the pretrained epithelium/stroma model 'python3 code/preprocessing/epithelium_stroma_segmentation.py'. The model weights file is located at 'code/preprocessing/epi_seg_unet.pth' (specify the 'input_path' to the location where tiles are extracted and 'output_path' where you want to store the epithelium/stroma segmentation masks)<br><br>
 
-    c. <b>Nuclei segmentation</b> - To segment the nuclei regions on the patches extracted above, run the pretrained Hovernet model (https://github.com/vqdang/hover_net). We utilized the PanNuke checkpoint model weights over here.<br><br>
+    c. <b>Nuclei segmentation</b> - To segment the nuclei regions on the tiles extracted above, run the pretrained Hovernet model (https://github.com/vqdang/hover_net). We utilized the PanNuke checkpoint model weights over here.<br><br>
 
 
-2. Extracting collagen features<br>
-3. Extracting immune features<br>
-4. Survival analysis<br>
+2. <b>Extracting collagen features</b><br>
+As described in the manuscript, for extracting the collagen features run the Matlab file (code/collagen/feature_map_for_each_tile.m) that generates the Collagen Fiber Orientation Disorder map for each tile extracted (for different tumor neighborhood sizes, you would need to change this variable 'win_size' as 200, 250, 300, 350, 400, 450, 500, 550, and 600).
+(specify the 'patches_dir' to the location where tiles are extracted, 'epi_stroma_masks_dir' where epithelium/stroma segmentation masks are extracted, 'nuclei_masks_dir' where the nuclei segmentation masks are extracted, and 'collagen_masks_dir' where you want to store the feature maps for each tile.)<br>
+After obtaining the feature maps for each tile and for each tumor neighborhood (create separate folders for each tumor neighborhood), run the Matlab file (code/collagen/patient_level_features_collagen.m) that gives patient-level features (mean, minimum, and maximum) for each patient and for each tumor neighborhood, giving a total of 27 features.
+(specify the 'files_dir' to the location patient list is for the cohort, 'feature_maps_dir' where feature maps are extracted after running the Matlab file 'code/collagen/feature_map_for_each_tile.m', 'collagen_masks_dir' where you want to store the patient-level features.)<br><br>
+
+
+3. <b>Extracting immune features</b><br>
+
+
+4. <b>Survival analysis</b><br>
 
 Once the features (collagen and immune) are extracted, we trained a survival model for predicting survival outcomes. The survival model used for our work was LASSO Cox Regression Model and the training was done on D0 cohort and validated on (D1-D8) cohorts.<br>
-For reference, we have provided the file 'data/data.csv' which lists all the features used for analysis. Run the notebooks 'notebooks/survival_analysis_D1.ipynb', 'notebooks/survival_analysis_D2.ipynb', 'notebooks/survival_analysis_D3.ipynb', 'notebooks/survival_analysis_D4.ipynb', 'notebooks/survival_analysis_D5_D6_D7.ipynb', and 'notebooks/survival_analysis_D8.ipynb' for validation on D1-D8 cohorts.
+For reference, we have provided the file 'data/data.csv' which lists all the features from all the cohorts (D1-D8) used for analysis. Run the notebooks 'code/survival_analysis/notebooks/survival_analysis_D1.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D2.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D3.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D4.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D5_D6_D7.ipynb', and 'code/survival_analysis/notebooks/survival_analysis_D8.ipynb' for validation on D1-D8 cohorts.<br><br>
+
+5. <b> Genomic analysis</b><br>
