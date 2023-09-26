@@ -40,7 +40,7 @@ a. <b>Extracting tiles</b> - This extracts tiles from the whole slide image of s
 
 2. <b>Extracting collagen features</b><br>
 As described in the manuscript, for extracting the collagen features run the Matlab file (code/collagen/feature_map_for_each_tile.m) that generates the Collagen Fiber Orientation Disorder map for each tile extracted (for different tumor neighborhood sizes, you would need to change this variable 'win_size' as 200, 250, 300, 350, 400, 450, 500, 550, and 600).
-(specify the 'patches_dir' to the location where tiles are extracted, 'epi_stroma_masks_dir' where epithelium/stroma segmentation masks are extracted, 'nuclei_masks_dir' where the nuclei segmentation masks are extracted, and 'collagen_masks_dir' where you want to store the feature maps for each tile.)<br>
+(specify the 'patches_dir' to the location where tiles are extracted, 'epi_stroma_masks_dir' where epithelium/stroma segmentation masks are extracted, 'nuclei_masks_dir' where the nuclei segmentation masks are extracted, and 'collagen_masks_dir' where you want to store the feature maps for each tile.)<br><br>
 After obtaining the feature maps for each tile and for each tumor neighborhood (create separate folders for each tumor neighborhood), run the Matlab file (code/collagen/patient_level_features_collagen.m) that gives patient-level features (mean, minimum, and maximum) for each patient and for each tumor neighborhood, giving a total of 27 features.
 (specify the 'files_dir' to the location patient list is for the cohort, 'feature_maps_dir' where feature maps are extracted after running the Matlab file 'code/collagen/feature_map_for_each_tile.m', 'collagen_masks_dir' where you want to store the patient-level features.)<br><br>
 
@@ -50,7 +50,7 @@ After obtaining the feature maps for each tile and for each tumor neighborhood (
 
 4. <b>Survival analysis</b><br>
 
-Once the features (collagen and immune) are extracted, we trained a survival model for predicting survival outcomes. The survival model used for our work was LASSO Cox Regression Model and the training was done on D0 cohort and validated on (D1-D8) cohorts.<br>
+    Once the features (collagen and immune) are extracted, we trained a survival model for predicting survival outcomes. The survival model used for our work was LASSO Cox Regression Model and the training was done on D0 cohort and validated on (D1-D8) cohorts.<br>
 For reference, we have provided the file 'data/data.csv' which lists all the features from all the cohorts (D1-D8) used for analysis. Run the notebooks 'code/survival_analysis/notebooks/survival_analysis_D1.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D2.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D3.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D4.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D5_D6_D7.ipynb', and 'code/survival_analysis/notebooks/survival_analysis_D8.ipynb' for validation on D1-D8 cohorts.<br><br>
 
 5. <b> Genomic analysis</b><br>
