@@ -29,12 +29,12 @@ The main steps involved in the CollaTIL biomarker are as follows:
 
 
 ## Running the code
-1. Preprocessing steps<br>
+1. Preprocessing steps
 a. Extracting patches - This extracts patches from the whole slide image of size 3000x3000-pixel. Run the python file 'python3 code/preprocessing/extract_patches.py' (specify the 'input_path' to the location where whole slide images exist and 'output_path' where you want to store the patches)<br><br>
 
-<t>b. Epithelium/Stroma segmentation - To segment the epithelium/stromal regions on the patches extracted above, run the pretrained epithelium/stroma model 'python3 code/preprocessing/epithelium_stroma_segmentation.py'. The model weights file is located at 'code/preprocessing/epi_seg_unet.pth' (specify the 'input_path' to the location where patches are extracted and 'output_path' where you want to store the epi/stroma segmentation masks)<br><br>
+b. Epithelium/Stroma segmentation - To segment the epithelium/stromal regions on the patches extracted above, run the pretrained epithelium/stroma model 'python3 code/preprocessing/epithelium_stroma_segmentation.py'. The model weights file is located at 'code/preprocessing/epi_seg_unet.pth' (specify the 'input_path' to the location where patches are extracted and 'output_path' where you want to store the epi/stroma segmentation masks)<br><br>
 
-<t>c. Nuclei segmentation - To segment the nuclei regions on the patches extracted above, run the pretrained Hovernet model (https://github.com/vqdang/hover_net). We utilized the PanNuke checkpoint model weights over here.<br><br>
+c. Nuclei segmentation - To segment the nuclei regions on the patches extracted above, run the pretrained Hovernet model (https://github.com/vqdang/hover_net). We utilized the PanNuke checkpoint model weights over here.<br><br>
 
 
 2. Extracting collagen features<br>
