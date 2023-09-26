@@ -1,26 +1,26 @@
-# CollaTIL Biomarker
+# CollaTIL Biomarker for Gynecologic Malignancies
 
 [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](LICENSE.md)
 ---
 
 
 ## Abstract
-The role of immune cells in collagen degradation within the tumor microenvironment (TME) is unclear. We introduce CollaTIL, a computational pathology method that quantitatively characterizes the immune-collagen relationship within the TME of gynecologic cancers, including high-grade serous ovarian (HGSOC), cervical squamous cell (CSCC), and endometrial carcinomas. CollaTIL aims to investigate immune modulatory impact on collagen architecture within the TME, aiming to uncover the interplay between the immune system and tumor progression. We observed that increased immune infiltrate is associated with chaotic collagen architecture and higher entropy, while immune sparse TME exhibits ordered collagen and lower entropy. Importantly, CollaTIL-associated features that stratified disease risk were found to be linked with gene signatures corresponding to TCA-Cycle in CSCC, and amino acid metabolism and macrophages in HGSOC.
+The role of immune cells in collagen degradation within the tumor microenvironment (TME) is unclear. We introduce CollaTIL, a computational pathology method that quantitatively characterizes the immune-collagen relationship within the TME of gynecologic cancers, including high-grade serous ovarian (HGSOC), cervical squamous cell (CSCC), and endometrial carcinomas. CollaTIL aims to investigate immune modulatory impact on collagen architecture within the TME, aiming to uncover the interplay between the immune system and tumor progression. We observed that increased immune infiltrate is associated with chaotic collagen architecture and higher entropy, while immune sparse TME exhibits ordered collagen and lower entropy. Importantly, CollaTIL-associated features that stratified disease risk were found to be linked with gene signatures corresponding to TCA-Cycle in CSCC, and amino acid metabolism and macrophages in HGSOC.<br>
 
 
 ## Authors
-Arpit Aggarwal, Sirvan Khalighi, Anant Madabhushi
+Arpit Aggarwal, Sirvan Khalighi, Anant Madabhushi<br>
 
 
-### Manuscript file
-Please find the required manuscript documents over here (manuscript/Aggarwal_CollaTIL_manuscript.docx, manuscript/Aggarwal_CollaTIL_supplementary.docx)
+## Manuscript file
+Please find the required manuscript documents over here (manuscript/Aggarwal_CollaTIL_manuscript.docx, manuscript/Aggarwal_CollaTIL_supplementary.docx)<br>
 
 
-### Packages Required
-The packages required for running this code are Matlab, PyTorch, Numpy, Scipy, Sklearn and OpenCV.
+## Packages Required
+The packages required for running this code are Matlab, PyTorch, Numpy, Openslide, PIL, OpenCV, and Matplotlib.<br>
 
 
-### Pipeline for CollaTIL biomarker
+## Pipeline for CollaTIL biomarker
 The main steps involved in the CollaTIL biomarker are as follows:
 1. Preprocessing steps (Extracting patches, Epithelium/Stroma segmentation, Nuclei segmentation)
 2. Extracting collagen features
@@ -28,7 +28,7 @@ The main steps involved in the CollaTIL biomarker are as follows:
 4. Survival analysis
 
 
-### Running the code
+## Running the code
 1. Preprocessing steps<br>
 a. Extracting patches - This extracts patches from the whole slide image of size 3000x3000-pixel. Run the python file 'python3 code/preprocessing/extract_patches.py' (specify the 'input_path' to the location where whole slide images exist and 'output_path' where you want to store the patches)<br><br>
 
