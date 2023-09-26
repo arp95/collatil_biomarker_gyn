@@ -6,16 +6,18 @@ addpath(genpath('pwd'))
 
 
 % paths (CHANGE THESE)
-patches_dir = "";
-epi_stroma_masks_dir = "";
-nuclei_masks_dir = "";
+patches_dir = "../../example/patch/";
+epi_stroma_masks_dir = "../../example/epi_stroma_mask/";
+nuclei_masks_dir = "../../example/nuclei_mask/";
 
 % CHANGE THIS to where you want to store the collagen feature maps
-collagen_masks_dir = "";
+collagen_masks_dir = "../../example/collagen/feature_map/600/";
 
 patches = dir(fullfile(patches_dir, '*.png'));
 for index = 1:1
     filename = patches(index).name;
+    filename
+
     current_patch = imread(patches_dir + filename);
     epi_stroma_mask = imread(epi_stroma_masks_dir + filename);
     nuclei_mask = imread(nuclei_masks_dir + filename);
@@ -27,7 +29,7 @@ for index = 1:1
     number_of_ones = sum(epi_stroma_mask(:) > 0);
     if im2double(number_of_ones/(number_of_ones + number_of_zeros)) < 0.9
         % hyperparameters for calculating collagen features
-        win_size = 200;
+        win_size = 600;
         filter_scale = 3;
         orient_cooccur_scheme = 1;
         feature_descriptor = 6;

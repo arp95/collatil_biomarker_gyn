@@ -7,9 +7,9 @@ addpath(genpath('pwd'))
 
 
 % paths (CHANGE THESE)
-files_dir = "";
-feature_maps_dir = "";
-collagen_masks_dir = "";
+files_dir = "../../example/files/";
+feature_maps_dir = "../../example/collagen/feature_map/600/";
+collagen_masks_dir = "../../example/collagen/patient_features/600/";
 
 files = dir(fullfile(files_dir, '*.csv'));
 feature_maps = dir(fullfile(feature_maps_dir, '*.mat'));
@@ -50,7 +50,7 @@ for index = 1:length(files)
     feature_4 = min_file;
     feature_5 = max_file;
     feature_6 = feature_5 - feature_4;
-    feature_matrix = [feature_1, feature_4, feature_5, feature_6];
+    feature_matrix = [feature_1, feature_4, feature_5];
     if feature_5 > 0
         csvwrite(collagen_masks_dir + filename + '.csv', feature_matrix);
     end
