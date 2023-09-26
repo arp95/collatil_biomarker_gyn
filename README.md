@@ -48,7 +48,7 @@ After obtaining the feature maps for each tile and for each tumor neighborhood (
 3. <b>Extracting immune features</b><br>
 As described in the manuscript, for extracting the immune features for each tile run the Matlab file (code/immune/feature_for_each_tile.m).
 (specify the 'HE_patch_folder' to the location where tiles are extracted, 'ES_folder' where epithelium/stroma segmentation masks are extracted, 'nuc_folder' where the nuclei segmentation masks are extracted, and 'features_store' where you want to store the features for each tile.)<br><br>
-After obtaining the immune features for each tile, the patient-level features are obtained by taking the first-order statistics (mean, median, minimum, maximum, range, and variance) for the tiles of the H&E-WSI. As described in the paper (https://jitc.bmj.com/content/10/2/e003833), the top 7 features that were found prognostic by training the LASSO Cox Model on D0 cohort were used in this paper for analysis from the immune component of the TME.<br><br>
+After obtaining the immune features for each tile, the patient-level features are obtained by taking the first-order statistics (mean, median, minimum, maximum, range, and variance) for the tiles of the H&E-WSI. As described in the paper (https://jitc.bmj.com/content/10/2/e003833), the top 7 features that were found prognostic by training the LASSO Cox Model on D0 cohort and these were the features that were used in this paper from the immune component of the TME.<br><br>
 
 
 4. <b>Survival analysis</b><br>

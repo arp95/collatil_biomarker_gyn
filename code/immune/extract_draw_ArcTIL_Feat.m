@@ -20,12 +20,10 @@ else
     end
 end
 
-featNames = ones(1,1);
-Features = ones(1,1);
 if strcmp(Case,'Blank')
     fprintf('empty patch \n');
-    featNames = ones(1,1);
-    Features = ones(1,1);
+    featNames = ones(3516,1);
+    Features = ones(3516,1);
     
 else
     [nucCentroids,nucFeatures,~] = get7NucLocalFeatures(I,M);
