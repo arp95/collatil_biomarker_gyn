@@ -55,5 +55,3 @@ After obtaining the immune features for each tile, the patient-level features ar
 
     Once the features (collagen and immune) are extracted, we trained a survival model for predicting survival outcomes. The survival model used for our work was LASSO Cox Regression Model and the training was done on D0 cohort and validated on (D1-D8) cohorts.<br>
 For reference, we have provided the file 'data/data.csv' which lists all the features from all the cohorts (D1-D8) used for analysis. Run the notebooks 'code/survival_analysis/notebooks/survival_analysis_D1.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D2.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D3.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D4.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D5_D6_D7.ipynb', and 'code/survival_analysis/notebooks/survival_analysis_D8.ipynb' for validation on D1-D8 cohorts.<br><br>
-
-5. <b> Genomic analysis</b><br>
