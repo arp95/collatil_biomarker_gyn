@@ -37,7 +37,12 @@ a. <b>Extracting tiles from H&E-stained Whole Slide Images</b> - This extracts t
 
 b. <b>Epithelium/Stroma segmentation</b> - To segment the epithelium/stromal regions on the tiles extracted above, run the pretrained epithelium/stroma model 'python3 code/preprocessing/epithelium_stroma_segmentation.py'. The model weights file is located at 'code/preprocessing/epi_seg_unet.pth' (specify the 'input_path' to the location where tiles are extracted and 'output_path' where you want to store the epithelium/stroma segmentation masks)<br><br>
 
+<img src="example/nuclei_mask/TCGA-23-1809_30000_30000.png" width="200" height="200">
+
+
 c. <b>Nuclei segmentation</b> - To segment the nuclei regions on the tiles extracted above, run the pretrained Hovernet model (https://github.com/vqdang/hover_net). We utilized the PanNuke checkpoint model weights over here.<br><br>
+
+<img src="example/epi_stroma_mask/TCGA-23-1809_30000_30000.png" width="200" height="200">
 
 
 2. <b>Extracting collagen features</b><br>
