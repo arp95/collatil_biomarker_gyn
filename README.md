@@ -33,7 +33,7 @@ The main steps involved in the CollaTIL biomarker are as follows:
 a. <b>Extracting tiles from H&E-stained Whole Slide Images</b> - This extracts tiles from the whole slide image of size 3000x3000-pixel. Run the python file 'python3 code/preprocessing/extract_patches.py' (specify the 'input_path' to the location where whole slide images exist and 'output_path' where you want to store the tiles)<br><br>
 
 <b>An example of extracted tile from whole slide image</b>
-<img src="example/patch/TCGA-23-1809_30000_30000.png" alt="An example of extracted tile from whole slide image" width="400" height="400">
+<img src="example/patch/TCGA-23-1809_30000_30000.png" alt="An example of extracted tile from whole slide image" width="300" height="300">
 
 
 b. <b>Epithelium/Stroma segmentation</b> - To segment the epithelium/stromal regions on the tiles extracted above, run the pretrained epithelium/stroma model 'python3 code/preprocessing/epithelium_stroma_segmentation.py'. The model weights file is located at 'code/preprocessing/epi_seg_unet.pth' (specify the 'input_path' to the location where tiles are extracted and 'output_path' where you want to store the epithelium/stroma segmentation masks)<br><br>
