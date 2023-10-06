@@ -37,12 +37,12 @@ a. <b>Extracting tiles from H&E-stained Whole Slide Images</b> - This extracts t
 
 b. <b>Epithelium/Stroma segmentation</b> - To segment the epithelium/stromal regions on the tiles extracted above, run the pretrained epithelium/stroma model 'python3 code/preprocessing/epithelium_stroma_segmentation.py'. The model weights file is located at 'code/preprocessing/epi_seg_unet.pth' (specify the 'input_path' to the location where tiles are extracted and 'output_path' where you want to store the epithelium/stroma segmentation masks)<br><br>
 
-<img src="example/nuclei_mask/TCGA-23-1809_30000_30000.png" width="200" height="200">
+<img src="example/epi_stroma_mask/TCGA-23-1809_30000_30000.png" width="200" height="200">
 
 
 c. <b>Nuclei segmentation</b> - To segment the nuclei regions on the tiles extracted above, run the pretrained Hovernet model (https://github.com/vqdang/hover_net). We utilized the PanNuke checkpoint model weights over here.<br><br>
 
-<img src="example/epi_stroma_mask/TCGA-23-1809_30000_30000.png" width="200" height="200">
+<img src="example/nuclei_mask/TCGA-23-1809_30000_30000.png" width="200" height="200">
 
 
 2. <b>Extracting collagen features</b><br>
@@ -62,3 +62,5 @@ After obtaining the immune features for each tile, the patient-level features ar
 
     Once the features (collagen and immune) are extracted, we trained a survival model for predicting survival outcomes. The survival model used for our work was LASSO Cox Regression Model and the training was done on D0 cohort and validated on (D1-D8) cohorts.<br>
 For reference, we have provided the file 'data/data.csv' which lists all the features from all the cohorts (D1-D8) used for analysis. Run the notebooks 'code/survival_analysis/notebooks/survival_analysis_D1.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D2.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D3.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D4.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D5_D6_D7.ipynb', and 'code/survival_analysis/notebooks/survival_analysis_D8.ipynb' for validation on D1-D8 cohorts.<br><br>
+
+<img src="example/survival_analysis/figure4.png" width="200" height="200">
