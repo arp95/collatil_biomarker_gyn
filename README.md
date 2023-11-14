@@ -1,4 +1,4 @@
-# CollaTIL Biomarker for Gynecologic Malignancies
+# CollaTIL Biomarker
 
 ---
 
