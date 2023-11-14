@@ -25,7 +25,8 @@ The main steps involved in the CollaTIL biomarker are as follows:
 2. Extracting collagen features
 3. Extracting immune features
 4. Survival analysis
-5. Genomic analysis
+5. Univariate and multivariable analysis
+6. Genomic analysis
 
 
 ## Running the code
@@ -68,3 +69,7 @@ After obtaining the immune features for each tile, the patient-level features ar
 For reference, we have provided the file 'data/data.csv' which lists all the features from all the cohorts (D1-D8) used for analysis. Run the notebooks 'code/survival_analysis/notebooks/survival_analysis_D1.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D2.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D3.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D4.ipynb', 'code/survival_analysis/notebooks/survival_analysis_D5_D6_D7.ipynb', and 'code/survival_analysis/notebooks/survival_analysis_D8.ipynb' for validation on D1-D8 cohorts.<br><br>
 
 <img src="example/survival_analysis/figure4.png" width="800" height="800">
+
+
+5. Univariate and multivariable analysis
+For the univariate and multivariable analysis, use the files 'code/survival_analysis/univariate.m' and 'code/survival_analysis/multivariableAnalysis.m' respectively. Please refer to manuscript for understanding what clinical variables were used along with our signature for multivariable analysis.<br><br>
