@@ -23,7 +23,7 @@ The packages required for running this code are Matlab, PyTorch, Numpy, Openslid
 
 ## Data used in the study
 
-<img src="example/figure2.png" width="600" height="600">
+<img src="example/figure2.png" width="800" height="600">
 
 
 ## Pipeline for CollaTIL biomarker
