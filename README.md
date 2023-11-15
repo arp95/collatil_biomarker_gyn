@@ -6,6 +6,8 @@
 ## Abstract
 The role of immune cells in collagen degradation within the tumor microenvironment (TME) is unclear. We introduce CollaTIL, a computational pathology method that quantitatively characterizes the immune-collagen relationship within the TME of gynecologic cancers, including high-grade serous ovarian (HGSOC), cervical squamous cell (CSCC), and endometrial carcinomas. CollaTIL aims to investigate immune modulatory impact on collagen architecture within the TME, aiming to uncover the interplay between the immune system and tumor progression. We observed that increased immune infiltrate is associated with chaotic collagen architecture and higher entropy, while immune sparse TME exhibits ordered collagen and lower entropy. Importantly, CollaTIL-associated features that stratified disease risk were found to be linked with gene signatures corresponding to TCA-Cycle in CSCC, and amino acid metabolism and macrophages in HGSOC.<br>
 
+<img src="example/figure1.png" width="200" height="200">
+
 
 ## Authors
 Arpit Aggarwal, Sirvan Khalighi, Anant Madabhushi<br>
