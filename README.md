@@ -78,5 +78,5 @@ For reference, we have provided the file 'data/data.csv' which lists all the fea
 <img src="example/survival_analysis/figure4.png" width="800" height="800">
 
 
-5. Univariate and multivariable analysis
+5. <b>Univariate and multivariable analysis</b><br>
 For the univariate and multivariable analysis, use the files 'code/survival_analysis/univariate.m' and 'code/survival_analysis/multivariableAnalysis.m' respectively. Please refer to manuscript for understanding what clinical variables were used along with our signature for multivariable analysis.<br><br>
