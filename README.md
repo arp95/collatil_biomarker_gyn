@@ -13,12 +13,17 @@ The role of immune cells in collagen degradation within the tumor microenvironme
 Arpit Aggarwal, Sirvan Khalighi, Anant Madabhushi<br>
 
 
-## Manuscript file
+## Manuscript files
 Please find the required manuscript documents over here (manuscript/Aggarwal_CollaTIL_manuscript.docx, manuscript/Aggarwal_CollaTIL_supplementary.docx)<br>
 
 
 ## Packages Required
 The packages required for running this code are Matlab, PyTorch, Numpy, Openslide, PIL, OpenCV, Pandas, Sksurv, Sklearn, and Matplotlib.<br>
+
+
+## Data used in the study
+
+<img src="example/figure2.png" width="600" height="600">
 
 
 ## Pipeline for CollaTIL biomarker
