@@ -1,4 +1,4 @@
-# CollaTIL Biomarker
+# CollaTIL Biomarker for Gynecological Cancers
 
 ---
 
@@ -14,7 +14,7 @@ Arpit Aggarwal, Sirvan Khalighi, Anant Madabhushi<br>
 
 
 ## Manuscript files
-Please find the required manuscript documents over here (manuscript/Aggarwal_CollaTIL_manuscript.docx, manuscript/Aggarwal_CollaTIL_supplementary.docx)<br>
+Please find the required manuscript documents over here (manuscript/Article File.docx, manuscript/Supplementary Information.pdf)<br>
 
 
 ## Packages Required
@@ -38,17 +38,17 @@ The main steps involved in the CollaTIL biomarker are as follows:
 
 ## Running the code
 1. <b>Preprocessing steps</b><br>
-a. <b>Extracting tiles from H&E-stained Whole Slide Images</b> - This extracts tiles from the whole slide image of size 3000x3000-pixel. Run the python file 'python3 code/preprocessing/extract_patches.py' (specify the 'input_path' to the location where whole slide images exist and 'output_path' where you want to store the tiles)<br><br>
+a. <b>Extracting tiles from H&E-stained Whole Slide Images</b> - This extracts tiles from the whole slide image of size 3000x3000-pixel. Run the python file 'python3 code/preprocessing/extract_patches.py' (specify the 'input_path' to the location where whole slide images exist and 'output_path' where you want to store the tiles). An example extracted tile is shown below:<br><br>
 
 <img src="example/patch/TCGA-23-1809_30000_30000.png" width="200" height="200">
 
 
-b. <b>Epithelium/Stroma segmentation</b> - To segment the epithelium/stromal regions on the tiles extracted above, run the pretrained epithelium/stroma model 'python3 code/preprocessing/epithelium_stroma_segmentation.py'. The model weights file is located at 'code/preprocessing/epi_seg_unet.pth' (specify the 'input_path' to the location where tiles are extracted and 'output_path' where you want to store the epithelium/stroma segmentation masks)<br><br>
+b. <b>Epithelium/Stroma segmentation</b> - To segment the epithelium/stromal regions on the tiles extracted above, run the pretrained epithelium/stroma model 'python3 code/preprocessing/epithelium_stroma_segmentation.py'. The model weights file is located at 'code/preprocessing/epi_seg_unet.pth' (specify the 'input_path' to the location where tiles are extracted and 'output_path' where you want to store the epithelium/stroma segmentation masks). An example epithelium/stroma segmentation mask is shown below:<br><br>
 
 <img src="example/epi_stroma_mask/TCGA-23-1809_30000_30000.png" width="200" height="200">
 
 
-c. <b>Nuclei segmentation</b> - To segment the nuclei regions on the tiles extracted above, run the pretrained Hovernet model (https://github.com/vqdang/hover_net). We utilized the PanNuke checkpoint model weights over here.<br><br>
+c. <b>Nuclei segmentation</b> - To segment the nuclei regions on the tiles extracted above, run the pretrained Hovernet model (https://github.com/vqdang/hover_net). We utilized the PanNuke checkpoint model weights over here. An example nuclei segmentation mask is shown below:<br><br>
 
 <img src="example/nuclei_mask/TCGA-23-1809_30000_30000.png" width="200" height="200">
 
