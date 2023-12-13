@@ -14,11 +14,12 @@ Arpit Aggarwal, Sirvan Khalighi, and Anant Madabhushi<br>
 
 
 ## Manuscript files
-Please find the required manuscript documents over here (manuscript/Article File.docx, manuscript/Supplementary Information.pdf)<br>
+Please find the required manuscript documents over here (manuscript/Article File.docx, manuscript/Supplementary Information.pdf, and manuscript/Response to Referees.docx)<br>
 
 
 ## Packages Required
-The packages required for running this code are Matlab, PyTorch, Numpy, Openslide, PIL, OpenCV, Pandas, Sksurv, Sklearn, and Matplotlib.<br>
+Python, R, and Matlab were used for this study.<br>
+The packages required for running this code are PyTorch, Numpy, Openslide, PIL, OpenCV, Pandas, Sksurv, Sklearn, and Matplotlib.<br>
 
 
 ## Data used in the study
@@ -34,7 +35,8 @@ The main steps involved in the CollaTIL biomarker are as follows:
 4. Survival analysis
 5. Univariate and multivariable analysis
 6. Comparison of Collagen+Immune signature vs. Collagen alone vs. Immune alone
-7. Genomic analysis
+7. Immune modulatory effect on collagen architecture
+8. Genomic analysis
 
 
 ## Running the code
@@ -87,3 +89,9 @@ For the univariate and multivariable analysis, use the files 'code/survival_anal
 Our findings indicate that combining immune and collagen features resulted in higher C-indices, as well as statistically significant results (in terms of p-values, hazard ratios, and 95% confidence intervals), when compared to using immune or collagen features alone for the validation cohorts (D1-D8) used in our study.<br><br>
 
 <img src="example/table.png" width="800" height="800">
+
+
+7. <b>Immune modulatory effect on collagen architecture</b><br>
+For the high- and low-risk patients identified by CollaTIL in the D0-D2 cohorts, we compared the TIL density and entropy value of the disorder in collagen fiber orientations.<br><br>
+
+<img src="example/figure4.png" width="800" height="400">
