@@ -86,4 +86,4 @@ For the univariate and multivariable analysis, use the files 'code/survival_anal
 6. <b>Comparison of Collagen+Immune signature vs. Collagen alone vs. Immune alone</b><br>
 Our findings indicate that combining immune and collagen features resulted in higher C-indices, as well as statistically significant results (in terms of p-values, hazard ratios, and 95% confidence intervals), when compared to using immune or collagen features alone for the validation cohorts (D1-D8) used in our study.<br><br>
 
-<img src="example/table.png" width="600" height="600">
+<img src="example/table.png" width="800" height="600">
