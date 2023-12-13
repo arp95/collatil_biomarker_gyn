@@ -22,6 +22,11 @@ Python, R, and Matlab were used for this study.<br>
 The packages required for running this code are PyTorch, Numpy, Openslide, PIL, OpenCV, Pandas, Sksurv, Sklearn, and Matplotlib.<br>
 
 
+## Overview of the study
+
+<img src="example/overview_project1.png" width="800" height="800">
+
+
 ## Data used in the study
 
 <img src="example/figure2.png" width="800" height="600">
