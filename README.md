@@ -10,7 +10,7 @@ The role of immune cells in collagen degradation within the tumor microenvironme
 
 
 ## Authors
-Arpit Aggarwal, Sirvan Khalighi, Anant Madabhushi<br>
+Arpit Aggarwal, Sirvan Khalighi, and Anant Madabhushi<br>
 
 
 ## Manuscript files
@@ -33,7 +33,8 @@ The main steps involved in the CollaTIL biomarker are as follows:
 3. Extracting immune features
 4. Survival analysis
 5. Univariate and multivariable analysis
-6. Genomic analysis
+6. Comparison of Collagen+Immune signature vs. Collagen alone vs. Immune alone
+7. Genomic analysis
 
 
 ## Running the code
@@ -80,3 +81,9 @@ For reference, we have provided the file 'data/data.csv' which lists all the fea
 
 5. <b>Univariate and multivariable analysis</b><br>
 For the univariate and multivariable analysis, use the files 'code/survival_analysis/univariate.m' and 'code/survival_analysis/multivariableAnalysis.m' respectively. Please refer to manuscript for understanding what clinical variables were used along with our signature for multivariable analysis.<br><br>
+
+
+6. <b>Comparison of Collagen+Immune signature vs. Collagen alone vs. Immune alone</b><br>
+Our findings indicate that combining immune and collagen features resulted in higher C-indices, as well as statistically significant results (in terms of p-values, hazard ratios, and 95% confidence intervals), when compared to using immune or collagen features alone for the validation cohorts (D1-D8) used in our study.<br><br>
+
+<img src="example/table.png" width="600" height="600">
