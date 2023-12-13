@@ -88,10 +88,10 @@ For the univariate and multivariable analysis, use the files 'code/survival_anal
 6. <b>Comparison of Collagen+Immune signature vs. Collagen alone vs. Immune alone</b><br>
 Our findings indicate that combining immune and collagen features resulted in higher C-indices, as well as statistically significant results (in terms of p-values, hazard ratios, and 95% confidence intervals), when compared to using immune or collagen features alone for the validation cohorts (D1-D8) used in our study.<br><br>
 
-<img src="example/table.png" width="800" height="800">
+<img src="example/table.png" width="800" height="700">
 
 
 7. <b>Immune modulatory effect on collagen architecture</b><br>
 For the high- and low-risk patients identified by CollaTIL in the D0-D2 cohorts, we compared the TIL density and entropy value of the disorder in collagen fiber orientations.<br><br>
 
-<img src="example/figure4.png" width="800" height="400">
+<img src="example/figure4.png" width="800" height="500">
