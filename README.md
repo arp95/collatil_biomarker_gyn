@@ -24,7 +24,7 @@ The packages required for running this code are PyTorch, Numpy, Openslide, PIL, 
 
 ## Overview of the study
 
-<img src="example/overview_project1_2.png" width="800" height="800">
+<img src="example/overview_project1_2.png" width="800" height="500">
 
 
 ## Data used in the study
