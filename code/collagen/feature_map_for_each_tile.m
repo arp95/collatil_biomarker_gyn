@@ -29,7 +29,7 @@ for index = 1:1
     number_of_ones = sum(epi_stroma_mask(:) > 0);
     if im2double(number_of_ones/(number_of_ones + number_of_zeros)) < 0.9
         % hyperparameters for calculating collagen features
-        win_size = 600;
+        win_size = 200;
         filter_scale = 3;
         orient_cooccur_scheme = 1;
         feature_descriptor = 6;
@@ -53,6 +53,16 @@ for index = 1:1
         colg_center = collogen_props.Centroid;
         colg_area = collogen_props.Area;
         colg_orient = collogen_props.Orientation;
+
+        % plot collagen fibers
+        %for colgInd=1:length(colg_area)
+        %    u= colg_area(colgInd) * cosd(colg_orient(colgInd));
+        %    v= colg_area(colgInd) * sind(colg_orient(colgInd));
+        %    quiver(colg_center(colgInd,1), colg_center(colgInd,2), u, -v, 'color', 'b', 'LineWidth', 0.25, 'AutoScaleFactor', 0.25, 'MaxHeadSize', 1)
+        %    hold on
+        %    %quiver(colg_center(colgInd,1),colg_center(colgInd,2),-u,v,'color','b','LineWidth',0.25,'AutoScaleFactor',0.25,'MaxHeadSize',1)
+        %    hold on
+        %end
 
         %% feature extraction
         if length(colg_orient) > 0
@@ -97,13 +107,13 @@ for index = 1:1
             %heat_map.ColorbarVisible = 'off';
             %heat_map.FontColor = 'none';
             %saveas(heat_map, filename);
-            %figure
-            %roi = imresize(isnan(cfod_map(:,:,5)), [3000, 3000], 'nearest');
-            %imshow(current_patch);
-            %hold on
-            %handle = imagesc(imresize(cfod_map(:,:,5), [3000, 3000], 'nearest'), [1.5 2.5]);
-            %set(handle, 'AlphaData', 0.5*(1-double(roi)));
-            %colorbar
+            figure
+            roi = imresize(isnan(cfod_map(:,:,5)), [3000, 3000], 'nearest');
+            imshow(current_patch);
+            hold on
+            handle = imagesc(imresize(cfod_map(:,:,5), [3000, 3000], 'nearest'), [1.5 2.5]);
+            set(handle, 'AlphaData', 0.5*(1-double(roi)));
+            colorbar
         end
     end
 end
