@@ -38,8 +38,10 @@ for index = 1:1
         cfod_map = [];
 
         %% extract collagen fiber mask
+        %frag_thresh = filter_scale*10;
         frag_thresh = filter_scale*6;
-        [bifs] = compute_bifs(current_patch, filter_scale, .1, 2);
+        %[bifs] = compute_bifs(current_patch, filter_scale, .015, 1.5);
+        [bifs] = compute_bifs(current_patch, filter_scale, .05, 2);
         collagen_mask = bifs == feature_descriptor;
         [height, width] = size(collagen_mask);
         collagen_mask = (collagen_mask & (255 - epi_stroma_mask(:,:,1)));
@@ -63,6 +65,8 @@ for index = 1:1
         %    %quiver(colg_center(colgInd,1),colg_center(colgInd,2),-u,v,'color','b','LineWidth',0.25,'AutoScaleFactor',0.25,'MaxHeadSize',1)
         %    hold on
         %end
+        
+        %imtool(patch_collagen_mask)
 
         %% feature extraction
         if length(colg_orient) > 0
@@ -107,13 +111,13 @@ for index = 1:1
             %heat_map.ColorbarVisible = 'off';
             %heat_map.FontColor = 'none';
             %saveas(heat_map, filename);
-            figure
-            roi = imresize(isnan(cfod_map(:,:,5)), [3000, 3000], 'nearest');
-            imshow(current_patch);
-            hold on
-            handle = imagesc(imresize(cfod_map(:,:,5), [3000, 3000], 'nearest'), [1.5 2.5]);
-            set(handle, 'AlphaData', 0.5*(1-double(roi)));
-            colorbar
+            %figure
+            %roi = imresize(isnan(cfod_map(:,:,5)), [3000, 3000], 'nearest');
+            %imshow(current_patch);
+            %hold on
+            %handle = imagesc(imresize(cfod_map(:,:,5), [3000, 3000], 'nearest'), [1.5 2.5]);
+            %set(handle, 'AlphaData', 0.5*(1-double(roi)));
+            %colorbar
         end
     end
 end
