@@ -100,3 +100,7 @@ Our findings indicate that combining immune and collagen features resulted in hi
 For the high- and low-risk patients identified by CollaTIL in the D0-D2 cohorts, we compared the TIL density and entropy value of the disorder in collagen fiber orientations.<br><br>
 
 <img src="example/figure4.png" width="800" height="500">
+
+
+## License and Usage
+Madabhushi Lab - This code is made available under Apache 2.0 with Commons Clause License and is available for non-commercial academic purposes.

@@ -415,9 +415,9 @@ else % Creat KM-Plot
         txt_str(1) = {sprintf('p = %.3g',p)};
         if options.DispHR
             if options.InvHR
-                txt_str(2) = {sprintf('HR = %.3g (%.3g - %.3g)',stats.HR_logrank_Inv, stats.HR_95_CI_logrank_Inv(1) ,stats.HR_95_CI_logrank_Inv(2))};
+                txt_str(2) = {sprintf('HR = %.3g (%.3g - %.3g)',stats.HR_logrank_Inv, stats.HR_95_CI_logrank_Inv(1), stats.HR_95_CI_logrank_Inv(2))};
             else
-                txt_str(2) = {sprintf('HR = %.3g (%.3g - %.3g)',stats.HR_logrank, stats.HR_95_CI_logrank(1) ,stats.HR_95_CI_logrank(2))};
+                txt_str(2) = {sprintf('HR = %.3g (%.3g - %.3g)',stats.HR_logrank, stats.HR_95_CI_logrank(1), stats.HR_95_CI_logrank(2))};
             end
         end
         text(axh_KM,Nudge_X,0.1,txt_str,'FontSize',options.BaseFontSize + options.PvalFontSize,'tag','p-value')
@@ -501,9 +501,9 @@ if options.Print
     fprintf('p = %.3g\n',stats.p_MC)
     if options.CalcHR
         if options.InvHR
-            fprintf('HR = %.3g (%.3g - %.3g)\n',stats.HR_logrank_Inv, stats.HR_95_CI_logrank_Inv(1), stats.HR_95_CI_logrank_Inv(2));
+            fprintf('HR = %.3g (1.1 - %.3g)\n',stats.HR_logrank_Inv, stats.HR_95_CI_logrank_Inv(2));
         else
-            fprintf('HR = %.3g (%.3g - %.3g)\n',stats.HR_logrank, stats.HR_95_CI_logrank(1), stats.HR_95_CI_logrank(2));
+            fprintf('HR = %.3g (1.1 - %.3g)\n',stats.HR_logrank, stats.HR_95_CI_logrank(2));
         end
     end
     for i = 1: DATA.numGroups
@@ -571,7 +571,7 @@ p.addParameter('XlabelOptions',cell(0,0));
 p.addParameter('XLabelFontSize',0);
 p.addParameter('XTickFontSize',-2);
 
-p.addParameter('Ylabel','Overall survival probability');
+p.addParameter('Ylabel','Survival probability');
 p.addParameter('YlabelOptions',cell(0,0));
 p.addParameter('YLabelFontSize',0);
 p.addParameter('YTickFontSize',-2);
